@@ -1,0 +1,906 @@
+{
+  "version": 2,
+  "scenarios": [
+    {
+      "id": "boss_001",
+      "version": 2,
+      "category": "boss",
+      "character": "linda_micromanager",
+      "text": "Linda appears at your desk at 4:59 PM on Friday. \"Got a minute?\" she asks, blocking your escape route.",
+      "choices": [
+        {
+          "id": "boss_001_a",
+          "text": "Fake an urgent phone call",
+          "consequence": "Your phone wasn't even on. Linda saw everything.",
+          "statModifiers": { "reputation": -15, "chaos": 5, "stealth": -10 },
+          "sfx": "sad_trombone"
+        },
+        {
+          "id": "boss_001_b",
+          "text": "Accept your fate",
+          "consequence": "It was just about the TPS reports. But now you're here until 6.",
+          "statModifiers": { "reputation": 5, "chaos": 0, "stealth": 0 },
+          "sfx": "none"
+        },
+        {
+          "id": "boss_001_c",
+          "text": "Pretend to be on an important video call",
+          "consequence": "You're not wearing headphones. Nice try.",
+          "statModifiers": { "reputation": -10, "chaos": 10, "stealth": -5 },
+          "sfx": "record_scratch"
+        }
+      ]
+    },
+    {
+      "id": "boss_002",
+      "version": 2,
+      "category": "boss",
+      "character": "linda_micromanager",
+      "text": "Linda sends you a meeting invite for 8 AM tomorrow titled \"Quick Sync\". No agenda. No context.",
+      "choices": [
+        {
+          "id": "boss_002_a",
+          "text": "Accept immediately to seem eager",
+          "consequence": "She noticed you accepted in 3 seconds. Now she thinks you have no work.",
+          "statModifiers": { "reputation": -5, "chaos": 0, "stealth": -10 },
+          "sfx": "none"
+        },
+        {
+          "id": "boss_002_b",
+          "text": "Wait 2 hours before accepting",
+          "consequence": "Power move. Linda respects the game.",
+          "statModifiers": { "reputation": 5, "chaos": 0, "stealth": 10 },
+          "sfx": "cash_register"
+        },
+        {
+          "id": "boss_002_c",
+          "text": "Reply asking for an agenda",
+          "consequence": "Linda doesn't believe in agendas. Now you're on The List.",
+          "statModifiers": { "reputation": -10, "chaos": 5, "stealth": 0 },
+          "sfx": "suspense_sting"
+        }
+      ]
+    },
+    {
+      "id": "boss_003",
+      "version": 2,
+      "category": "boss",
+      "character": "linda_micromanager",
+      "text": "Linda asks if you can \"hop on a quick call\" at 5:45 PM on Friday. Your weekend flashes before your eyes.",
+      "choices": [
+        {
+          "id": "boss_003_a",
+          "text": "Say yes immediately",
+          "consequence": "The call lasts 47 minutes. You miss your dinner reservation.",
+          "statModifiers": { "reputation": 10, "chaos": -5, "stealth": -10 },
+          "sfx": "sad_trombone"
+        },
+        {
+          "id": "boss_003_b",
+          "text": "Claim you have a \"hard stop\" at 6",
+          "consequence": "Linda respects boundaries. This time.",
+          "statModifiers": { "reputation": 0, "chaos": 0, "stealth": 10 },
+          "sfx": "cash_register"
+        },
+        {
+          "id": "boss_003_c",
+          "text": "Pretend your internet is cutting out",
+          "consequence": "Linda sees you're still on Slack. Awkward.",
+          "statModifiers": { "reputation": -15, "chaos": 5, "stealth": -5 },
+          "sfx": "record_scratch"
+        }
+      ]
+    },
+    {
+      "id": "boss_004",
+      "version": 2,
+      "category": "boss",
+      "character": "linda_micromanager",
+      "text": "Linda stands behind you during a live presentation, breathing loudly.",
+      "choices": [
+        {
+          "id": "boss_004_a",
+          "text": "Ask if she needs anything",
+          "consequence": "She says \"I'm just observing\" and keeps standing there.",
+          "statModifiers": { "reputation": 0, "chaos": 0, "stealth": -5 },
+          "sfx": "suspense_sting"
+        },
+        {
+          "id": "boss_004_b",
+          "text": "Invite her to present the next slide",
+          "consequence": "She panics and waves you on. Power shift achieved.",
+          "statModifiers": { "reputation": 5, "chaos": 5, "stealth": 5 },
+          "sfx": "cash_register"
+        },
+        {
+          "id": "boss_004_c",
+          "text": "Pretend you didn't notice",
+          "consequence": "Everyone else noticed. Slack DMs explode.",
+          "statModifiers": { "reputation": -5, "chaos": 10, "stealth": 0 },
+          "sfx": "record_scratch"
+        }
+      ]
+    },
+    {
+      "id": "boss_005",
+      "version": 2,
+      "category": "boss",
+      "character": "linda_micromanager",
+      "text": "Linda schedules a \"performance calibration\" with only you invited.",
+      "choices": [
+        {
+          "id": "boss_005_a",
+          "text": "Bring printed receipts of your work",
+          "consequence": "She's impressed and slightly alarmed by the binder.",
+          "statModifiers": { "reputation": 10, "chaos": -5, "stealth": 0 },
+          "sfx": "cash_register"
+        },
+        {
+          "id": "boss_005_b",
+          "text": "Ask if this impacts your bonus",
+          "consequence": "She sidesteps the question. You learn nothing.",
+          "statModifiers": { "reputation": -5, "chaos": 0, "stealth": 0 },
+          "sfx": "none"
+        },
+        {
+          "id": "boss_005_c",
+          "text": "Suggest inviting HR for transparency",
+          "consequence": "Meeting gets rescheduled indefinitely.",
+          "statModifiers": { "reputation": 0, "chaos": 5, "stealth": 10 },
+          "sfx": "applause"
+        }
+      ]
+    },
+    {
+      "id": "boss_006",
+      "version": 2,
+      "category": "boss",
+      "character": "linda_micromanager",
+      "text": "Linda pings you \"quick q\" at 11:58 PM. It's marked urgent.",
+      "choices": [
+        {
+          "id": "boss_006_a",
+          "text": "Answer immediately",
+          "consequence": "She responds at 9 AM with \"nvm\".",
+          "statModifiers": { "reputation": 5, "chaos": -5, "stealth": -5 },
+          "sfx": "none"
+        },
+        {
+          "id": "boss_006_b",
+          "text": "Snooze until morning",
+          "consequence": "She calls you \"healthy boundaries\" in a meeting. Mixed vibes.",
+          "statModifiers": { "reputation": 0, "chaos": 0, "stealth": 10 },
+          "sfx": "cash_register"
+        },
+        {
+          "id": "boss_006_c",
+          "text": "Reply with \"Seen\" and nothing else",
+          "consequence": "Linda is unsettled. You gain mysterious power.",
+          "statModifiers": { "reputation": -5, "chaos": 10, "stealth": 5 },
+          "sfx": "record_scratch"
+        }
+      ]
+    },
+    {
+      "id": "boss_007",
+      "version": 2,
+      "category": "boss",
+      "character": "linda_micromanager",
+      "text": "Linda forwards you a 47-tab spreadsheet asking for \"a quick sense check\".",
+      "choices": [
+        {
+          "id": "boss_007_a",
+          "text": "Respond with a thumbs up emoji",
+          "consequence": "She replies \"Need more than a 👍\".",
+          "statModifiers": { "reputation": -5, "chaos": 5, "stealth": 0 },
+          "sfx": "slack_ding"
+        },
+        {
+          "id": "boss_007_b",
+          "text": "Send a pivot table back in 10 minutes",
+          "consequence": "She suspects you already had this ready. Impressive.",
+          "statModifiers": { "reputation": 10, "chaos": 0, "stealth": 0 },
+          "sfx": "cash_register"
+        },
+        {
+          "id": "boss_007_c",
+          "text": "Ask which tab is relevant",
+          "consequence": "She realizes she hasn't opened it either.",
+          "statModifiers": { "reputation": 0, "chaos": 5, "stealth": 5 },
+          "sfx": "applause"
+        }
+      ]
+    },
+    {
+      "id": "boss_008",
+      "version": 2,
+      "category": "boss",
+      "character": "gary_intern",
+      "text": "Gary, acting as \"assistant to Linda\", schedules back-to-back 15-minute check-ins.",
+      "choices": [
+        {
+          "id": "boss_008_a",
+          "text": "Decline half of them with \"conflict\"",
+          "consequence": "Gary apologizes profusely; Linda never notices.",
+          "statModifiers": { "reputation": 0, "chaos": 5, "stealth": 10 },
+          "sfx": "none"
+        },
+        {
+          "id": "boss_008_b",
+          "text": "Attend all of them",
+          "consequence": "You discuss the same topic 6 times. Brain fog achieved.",
+          "statModifiers": { "reputation": 5, "chaos": -5, "stealth": -5 },
+          "sfx": "sad_trombone"
+        },
+        {
+          "id": "boss_008_c",
+          "text": "Ask Gary to consolidate into one agenda",
+          "consequence": "Gary levels up his project management skills.",
+          "statModifiers": { "reputation": 5, "chaos": 5, "stealth": 0 },
+          "sfx": "cash_register"
+        }
+      ]
+    },
+    {
+      "id": "meeting_001",
+      "version": 2,
+      "category": "meeting",
+      "character": "chad_disruptor",
+      "text": "Chad has called an \"emergency brainstorm\" with 47 attendees. 45 are on mute. He's asking for \"blue sky thinking\".",
+      "choices": [
+        {
+          "id": "meeting_001_a",
+          "text": "Suggest something obviously stupid to test him",
+          "consequence": "Chad LOVES it. It's now a Q3 initiative.",
+          "statModifiers": { "reputation": 5, "chaos": 15, "stealth": 0 },
+          "sfx": "record_scratch"
+        },
+        {
+          "id": "meeting_001_b",
+          "text": "Stay silent and browse Reddit",
+          "consequence": "Nobody noticed. Peak efficiency.",
+          "statModifiers": { "reputation": 0, "chaos": 0, "stealth": 10 },
+          "sfx": "none"
+        },
+        {
+          "id": "meeting_001_c",
+          "text": "Actually contribute a good idea",
+          "consequence": "Chad takes credit. Tale as old as time.",
+          "statModifiers": { "reputation": -5, "chaos": 0, "stealth": 0 },
+          "sfx": "sad_trombone"
+        }
+      ]
+    },
+    {
+      "id": "meeting_002",
+      "version": 2,
+      "category": "meeting",
+      "character": "ghost_remote",
+      "text": "You're sharing your screen when a Slack DM from The Ghost pops up: \"this meeting is pointless lol\"",
+      "choices": [
+        {
+          "id": "meeting_002_a",
+          "text": "Pretend nothing happened",
+          "consequence": "Everyone saw it. The Ghost has gone fully invisible.",
+          "statModifiers": { "reputation": -5, "chaos": 10, "stealth": 0 },
+          "sfx": "slack_ding"
+        },
+        {
+          "id": "meeting_002_b",
+          "text": "Laugh and own it",
+          "consequence": "The whole team agrees. Meeting ends early. Legend.",
+          "statModifiers": { "reputation": 5, "chaos": 5, "stealth": 0 },
+          "sfx": "applause"
+        },
+        {
+          "id": "meeting_002_c",
+          "text": "Blame \"technical difficulties\" and end share",
+          "consequence": "IT logs show no issues. Dave knows the truth.",
+          "statModifiers": { "reputation": -10, "chaos": 0, "stealth": -5 },
+          "sfx": "suspense_sting"
+        }
+      ]
+    },
+    {
+      "id": "meeting_003",
+      "version": 2,
+      "category": "meeting",
+      "character": "chad_disruptor",
+      "text": "Chad insists on doing a standup while everyone is seated.",
+      "choices": [
+        {
+          "id": "meeting_003_a",
+          "text": "Stand up alone to prove a point",
+          "consequence": "You look extremely committed. Or confused.",
+          "statModifiers": { "reputation": 5, "chaos": 5, "stealth": 0 },
+          "sfx": "cash_register"
+        },
+        {
+          "id": "meeting_003_b",
+          "text": "Stay seated and say nothing",
+          "consequence": "Chad calls you out by name. Cameras turn on.",
+          "statModifiers": { "reputation": -5, "chaos": 5, "stealth": -5 },
+          "sfx": "record_scratch"
+        },
+        {
+          "id": "meeting_003_c",
+          "text": "Suggest an email instead",
+          "consequence": "Chad schedules another meeting to discuss.",
+          "statModifiers": { "reputation": -5, "chaos": 10, "stealth": 0 },
+          "sfx": "sad_trombone"
+        }
+      ]
+    },
+    {
+      "id": "meeting_004",
+      "version": 2,
+      "category": "meeting",
+      "character": "dave_it",
+      "text": "Dave from IT joins a meeting to \"observe\" and silently fixes the Wi-Fi mid-call.",
+      "choices": [
+        {
+          "id": "meeting_004_a",
+          "text": "Thank him publicly",
+          "consequence": "Dave disappears from the call instantly.",
+          "statModifiers": { "reputation": 5, "chaos": 0, "stealth": 0 },
+          "sfx": "cash_register"
+        },
+        {
+          "id": "meeting_004_b",
+          "text": "Ask how he did it",
+          "consequence": "He pastes a Linux command in chat. Nobody understands.",
+          "statModifiers": { "reputation": 0, "chaos": 5, "stealth": 0 },
+          "sfx": "typing"
+        },
+        {
+          "id": "meeting_004_c",
+          "text": "Ignore and keep presenting",
+          "consequence": "Dave respects the hustle. Also still mutes you once.",
+          "statModifiers": { "reputation": 0, "chaos": 0, "stealth": 5 },
+          "sfx": "slack_ding"
+        }
+      ]
+    },
+    {
+      "id": "meeting_005",
+      "version": 2,
+      "category": "meeting",
+      "character": "ghost_remote",
+      "text": "Half the meeting is \"waiting on one person\". That person is actually on the call, muted, camera off.",
+      "choices": [
+        {
+          "id": "meeting_005_a",
+          "text": "Call out the silence",
+          "consequence": "A mystery mic unmutes, coughs, and re-mutes.",
+          "statModifiers": { "reputation": 0, "chaos": 10, "stealth": 0 },
+          "sfx": "record_scratch"
+        },
+        {
+          "id": "meeting_005_b",
+          "text": "Move on without them",
+          "consequence": "Meeting ends 10 minutes early. Productivity spike.",
+          "statModifiers": { "reputation": 5, "chaos": 0, "stealth": 5 },
+          "sfx": "applause"
+        },
+        {
+          "id": "meeting_005_c",
+          "text": "Ask Dave to check audio",
+          "consequence": "Dave types \"working as intended\".",
+          "statModifiers": { "reputation": 0, "chaos": 0, "stealth": 5 },
+          "sfx": "typing"
+        }
+      ]
+    },
+    {
+      "id": "meeting_006",
+      "version": 2,
+      "category": "meeting",
+      "character": "chad_disruptor",
+      "text": "Chad mandates cameras on for \"energy\" while he turns his camera off to take a call.",
+      "choices": [
+        {
+          "id": "meeting_006_a",
+          "text": "Turn your camera off in solidarity",
+          "consequence": "Half the team follows. Chaos ensues.",
+          "statModifiers": { "reputation": -5, "chaos": 10, "stealth": 0 },
+          "sfx": "record_scratch"
+        },
+        {
+          "id": "meeting_006_b",
+          "text": "Keep camera on and smile",
+          "consequence": "Chad praises \"engagement\". You get face fatigue.",
+          "statModifiers": { "reputation": 5, "chaos": -5, "stealth": -5 },
+          "sfx": "none"
+        },
+        {
+          "id": "meeting_006_c",
+          "text": "Swap to a looping video of yourself",
+          "consequence": "No one notices for 20 minutes.",
+          "statModifiers": { "reputation": 0, "chaos": 10, "stealth": 10 },
+          "sfx": "cash_register"
+        }
+      ]
+    },
+    {
+      "id": "email_001",
+      "version": 2,
+      "category": "email",
+      "character": "karen_hr",
+      "text": "You accidentally replied \"lol\" to a company-wide email from the CEO about Q3 layoffs.",
+      "choices": [
+        {
+          "id": "email_001_a",
+          "text": "Send a follow-up apology email",
+          "consequence": "Now EVERYONE knows. Karen is already drafting a policy.",
+          "statModifiers": { "reputation": -10, "chaos": 15, "stealth": -15 },
+          "sfx": "sad_trombone"
+        },
+        {
+          "id": "email_001_b",
+          "text": "Pretend it was a phishing test you were investigating",
+          "consequence": "IT is confused but impressed. You're on the security team now.",
+          "statModifiers": { "reputation": 5, "chaos": 5, "stealth": 10 },
+          "sfx": "cash_register"
+        },
+        {
+          "id": "email_001_c",
+          "text": "Claim you were hacked",
+          "consequence": "Your password is now \"CorporateChaos2026!\" and you must change it weekly.",
+          "statModifiers": { "reputation": -5, "chaos": 5, "stealth": 5 },
+          "sfx": "none"
+        }
+      ]
+    },
+    {
+      "id": "email_002",
+      "version": 2,
+      "category": "email",
+      "character": "karen_hr",
+      "text": "Karen sends you an email with the subject \"Per my last email\" but you have no idea what she's talking about.",
+      "choices": [
+        {
+          "id": "email_002_a",
+          "text": "Search frantically for the original email",
+          "consequence": "It was from 6 months ago. About a potluck. She remembers everything.",
+          "statModifiers": { "reputation": -5, "chaos": 0, "stealth": 0 },
+          "sfx": "suspense_sting"
+        },
+        {
+          "id": "email_002_b",
+          "text": "Reply \"Apologies, can you resend?\"",
+          "consequence": "Karen's reply: \"It's in the thread below.\" It was not.",
+          "statModifiers": { "reputation": -5, "chaos": 5, "stealth": 0 },
+          "sfx": "none"
+        },
+        {
+          "id": "email_002_c",
+          "text": "Ignore it completely",
+          "consequence": "Bold strategy. Karen adds you to 3 new email chains.",
+          "statModifiers": { "reputation": -10, "chaos": 0, "stealth": 5 },
+          "sfx": "slack_ding"
+        }
+      ]
+    },
+    {
+      "id": "email_003",
+      "version": 2,
+      "category": "email",
+      "character": "dave_it",
+      "text": "Dave BCCs you on a mysterious \"FYI\" thread with 37 recipients.",
+      "choices": [
+        {
+          "id": "email_003_a",
+          "text": "Ask why you were included",
+          "consequence": "Dave replies with a cryptic GIF.",
+          "statModifiers": { "reputation": 0, "chaos": 5, "stealth": 0 },
+          "sfx": "typing"
+        },
+        {
+          "id": "email_003_b",
+          "text": "Archive immediately",
+          "consequence": "You miss a follow-up action item. Oops.",
+          "statModifiers": { "reputation": -5, "chaos": 5, "stealth": 0 },
+          "sfx": "record_scratch"
+        },
+        {
+          "id": "email_003_c",
+          "text": "Reply with \"Noted\" to all",
+          "consequence": "Thread explodes. Karen steps in.",
+          "statModifiers": { "reputation": -10, "chaos": 10, "stealth": -5 },
+          "sfx": "sad_trombone"
+        }
+      ]
+    },
+    {
+      "id": "email_004",
+      "version": 2,
+      "category": "email",
+      "character": "karen_hr",
+      "text": "You get a phishing simulation email titled \"Mandatory Bonus Form\".",
+      "choices": [
+        {
+          "id": "email_004_a",
+          "text": "Report it as phishing",
+          "consequence": "Security applauds you in the #infosec channel.",
+          "statModifiers": { "reputation": 10, "chaos": 0, "stealth": 5 },
+          "sfx": "cash_register"
+        },
+        {
+          "id": "email_004_b",
+          "text": "Click immediately",
+          "consequence": "You fail the sim. Karen schedules training.",
+          "statModifiers": { "reputation": -10, "chaos": 5, "stealth": -5 },
+          "sfx": "sad_trombone"
+        },
+        {
+          "id": "email_004_c",
+          "text": "Forward to Chad asking if it's real",
+          "consequence": "Chad replies \"Looks legit\". IT facepalms.",
+          "statModifiers": { "reputation": -5, "chaos": 10, "stealth": 0 },
+          "sfx": "record_scratch"
+        }
+      ]
+    },
+    {
+      "id": "hr_001",
+      "version": 2,
+      "category": "hr",
+      "character": "karen_hr",
+      "text": "Karen wants to schedule a \"quick chat\" about your \"vibes\" in the last team meeting.",
+      "choices": [
+        {
+          "id": "hr_001_a",
+          "text": "Ask what \"vibes\" means in a corporate context",
+          "consequence": "Karen pulls out a 47-page document on \"Workplace Energy Standards\".",
+          "statModifiers": { "reputation": -5, "chaos": 5, "stealth": 0 },
+          "sfx": "record_scratch"
+        },
+        {
+          "id": "hr_001_b",
+          "text": "Apologize profusely for unspecified vibes",
+          "consequence": "Karen seems satisfied. You still have no idea what you did.",
+          "statModifiers": { "reputation": 5, "chaos": 0, "stealth": 5 },
+          "sfx": "none"
+        },
+        {
+          "id": "hr_001_c",
+          "text": "Counter with concerns about HER vibes",
+          "consequence": "Legendary move. HR is now investigating HR.",
+          "statModifiers": { "reputation": -15, "chaos": 20, "stealth": 0 },
+          "sfx": "dun_dun"
+        }
+      ]
+    },
+    {
+      "id": "hr_002",
+      "version": 2,
+      "category": "hr",
+      "character": "gary_intern",
+      "text": "Gary forwards you a mandatory training he already took, with \"plz finish\".",
+      "choices": [
+        {
+          "id": "hr_002_a",
+          "text": "Thank him and mark it complete",
+          "consequence": "You actually needed it. Surprise quiz later.",
+          "statModifiers": { "reputation": 0, "chaos": 5, "stealth": 0 },
+          "sfx": "record_scratch"
+        },
+        {
+          "id": "hr_002_b",
+          "text": "Ask if it's truly mandatory",
+          "consequence": "Gary cc's Karen. It is now very mandatory.",
+          "statModifiers": { "reputation": -5, "chaos": 10, "stealth": -5 },
+          "sfx": "sad_trombone"
+        },
+        {
+          "id": "hr_002_c",
+          "text": "Finish it and send Gary your notes",
+          "consequence": "Gary is grateful. You gain an ally.",
+          "statModifiers": { "reputation": 5, "chaos": 0, "stealth": 5 },
+          "sfx": "cash_register"
+        }
+      ]
+    },
+    {
+      "id": "hr_003",
+      "version": 2,
+      "category": "hr",
+      "character": "karen_hr",
+      "text": "HR launches a \"camera optional\" policy that is actually \"camera expected\".",
+      "choices": [
+        {
+          "id": "hr_003_a",
+          "text": "Ask for written clarification",
+          "consequence": "Karen replies with a flowchart. It's still unclear.",
+          "statModifiers": { "reputation": 0, "chaos": 5, "stealth": 0 },
+          "sfx": "typing"
+        },
+        {
+          "id": "hr_003_b",
+          "text": "Keep camera off until told otherwise",
+          "consequence": "Karen pings you privately. You turn it on.",
+          "statModifiers": { "reputation": -5, "chaos": 5, "stealth": -5 },
+          "sfx": "record_scratch"
+        },
+        {
+          "id": "hr_003_c",
+          "text": "Turn camera on with a tasteful virtual background",
+          "consequence": "Karen approves of your \"professionalism\".",
+          "statModifiers": { "reputation": 5, "chaos": 0, "stealth": 5 },
+          "sfx": "cash_register"
+        }
+      ]
+    },
+    {
+      "id": "hr_005",
+      "version": 2,
+      "category": "hr",
+      "character": "karen_hr",
+      "text": "Karen schedules a \"fun\" virtual happy hour on a Friday at 5 PM.",
+      "choices": [
+        {
+          "id": "hr_005_a",
+          "text": "Attend and over-participate",
+          "consequence": "You win a digital badge. Worth?",
+          "statModifiers": { "reputation": 5, "chaos": 5, "stealth": -5 },
+          "sfx": "applause"
+        },
+        {
+          "id": "hr_005_b",
+          "text": "Join, mute, and work quietly",
+          "consequence": "Karen calls on you twice. You miss it both times.",
+          "statModifiers": { "reputation": -5, "chaos": 0, "stealth": 5 },
+          "sfx": "record_scratch"
+        },
+        {
+          "id": "hr_005_c",
+          "text": "Decline with \"prior commitment\"",
+          "consequence": "Karen notes it. Your weekend is intact.",
+          "statModifiers": { "reputation": 0, "chaos": 0, "stealth": 10 },
+          "sfx": "none"
+        }
+      ]
+    },
+    {
+      "id": "remote_001",
+      "version": 2,
+      "category": "remote",
+      "character": "ghost_remote",
+      "text": "Your cat walks across your keyboard during a client demo, typing \"asdfghjkl\" into the chat.",
+      "choices": [
+        {
+          "id": "remote_001_a",
+          "text": "Blame \"technical difficulties\"",
+          "consequence": "The client asks if your cat is available for a follow-up call.",
+          "statModifiers": { "reputation": 5, "chaos": 5, "stealth": 0 },
+          "sfx": "cash_register"
+        },
+        {
+          "id": "remote_001_b",
+          "text": "Own it and show the cat on camera",
+          "consequence": "The cat is now the team mascot. You are secondary.",
+          "statModifiers": { "reputation": 10, "chaos": 5, "stealth": -5 },
+          "sfx": "applause"
+        },
+        {
+          "id": "remote_001_c",
+          "text": "Pretend it was an acronym",
+          "consequence": "\"Ah yes, ASDFGHJKL — our new project code name.\" Somehow this works.",
+          "statModifiers": { "reputation": 5, "chaos": 10, "stealth": 5 },
+          "sfx": "cash_register"
+        }
+      ]
+    },
+    {
+      "id": "remote_002",
+      "version": 2,
+      "category": "remote",
+      "character": "ghost_remote",
+      "text": "Your background is a messy kitchen. You only notice after screen sharing for 5 minutes.",
+      "choices": [
+        {
+          "id": "remote_002_a",
+          "text": "Own it and keep going",
+          "consequence": "Someone types \"same\" in chat. Solidarity achieved.",
+          "statModifiers": { "reputation": 0, "chaos": 5, "stealth": 0 },
+          "sfx": "applause"
+        },
+        {
+          "id": "remote_002_b",
+          "text": "Switch to a corporate background mid-call",
+          "consequence": "Your face temporarily disappears into the void.",
+          "statModifiers": { "reputation": -5, "chaos": 5, "stealth": -5 },
+          "sfx": "record_scratch"
+        },
+        {
+          "id": "remote_002_c",
+          "text": "Turn camera off and claim bandwidth issues",
+          "consequence": "Nobody questions it. Bandwidth forever.",
+          "statModifiers": { "reputation": 0, "chaos": 0, "stealth": 10 },
+          "sfx": "typing"
+        }
+      ]
+    },
+    {
+      "id": "remote_003",
+      "version": 2,
+      "category": "remote",
+      "character": "dave_it",
+      "text": "Your VPN drops every 10 minutes. Dave asks for logs.",
+      "choices": [
+        {
+          "id": "remote_003_a",
+          "text": "Pretend you don't know what logs are",
+          "consequence": "Dave sends a 12-step guide. You follow 3 steps.",
+          "statModifiers": { "reputation": -5, "chaos": 5, "stealth": 0 },
+          "sfx": "typing"
+        },
+        {
+          "id": "remote_003_b",
+          "text": "Actually send the logs",
+          "consequence": "Dave fixes it in 30 seconds and says nothing.",
+          "statModifiers": { "reputation": 5, "chaos": 0, "stealth": 5 },
+          "sfx": "cash_register"
+        },
+        {
+          "id": "remote_003_c",
+          "text": "Ask to work offline",
+          "consequence": "Dave grants it with surprising enthusiasm.",
+          "statModifiers": { "reputation": 0, "chaos": 5, "stealth": 5 },
+          "sfx": "applause"
+        }
+      ]
+    },
+    {
+      "id": "remote_004",
+      "version": 2,
+      "category": "remote",
+      "character": "ghost_remote",
+      "text": "You forget to unmute for an entire update, nodding vigorously the whole time.",
+      "choices": [
+        {
+          "id": "remote_004_a",
+          "text": "Summarize quickly after",
+          "consequence": "People thank you for the brevity.",
+          "statModifiers": { "reputation": 5, "chaos": 0, "stealth": 5 },
+          "sfx": "cash_register"
+        },
+        {
+          "id": "remote_004_b",
+          "text": "Pretend it was intentional silence",
+          "consequence": "\"Bold communication\" someone says sarcastically.",
+          "statModifiers": { "reputation": -5, "chaos": 5, "stealth": 0 },
+          "sfx": "record_scratch"
+        },
+        {
+          "id": "remote_004_c",
+          "text": "Type your update in chat",
+          "consequence": "Chat appreciates the receipts.",
+          "statModifiers": { "reputation": 5, "chaos": 0, "stealth": 5 },
+          "sfx": "typing"
+        }
+      ]
+    },
+    {
+      "id": "random_001",
+      "version": 2,
+      "category": "random",
+      "character": "none",
+      "text": "Someone has brought a live chicken to the office. No one is addressing it.",
+      "choices": [
+        {
+          "id": "random_001_a",
+          "text": "Report it to building security",
+          "consequence": "Security named the chicken. It has a badge now.",
+          "statModifiers": { "reputation": -5, "chaos": 10, "stealth": 0 },
+          "sfx": "record_scratch"
+        },
+        {
+          "id": "random_001_b",
+          "text": "Befriend the chicken",
+          "consequence": "The chicken prefers you to everyone else. This creates tension.",
+          "statModifiers": { "reputation": 0, "chaos": 15, "stealth": 0 },
+          "sfx": "cash_register"
+        },
+        {
+          "id": "random_001_c",
+          "text": "Continue working as if this is normal",
+          "consequence": "Peak corporate survival. The chicken respects your boundaries.",
+          "statModifiers": { "reputation": 0, "chaos": 0, "stealth": 10 },
+          "sfx": "none"
+        }
+      ]
+    },
+    {
+      "id": "random_002",
+      "version": 2,
+      "category": "random",
+      "character": "dave_it",
+      "text": "The office 3D printer starts printing mysterious ducks. Dave denies involvement.",
+      "choices": [
+        {
+          "id": "random_002_a",
+          "text": "Collect the ducks",
+          "consequence": "You now have desk mascots. Morale +5.",
+          "statModifiers": { "reputation": 0, "chaos": 5, "stealth": 5 },
+          "sfx": "applause"
+        },
+        {
+          "id": "random_002_b",
+          "text": "Turn off the printer",
+          "consequence": "It restarts itself. Dave smiles faintly.",
+          "statModifiers": { "reputation": -5, "chaos": 10, "stealth": -5 },
+          "sfx": "record_scratch"
+        },
+        {
+          "id": "random_002_c",
+          "text": "File a ticket",
+          "consequence": "Ticket auto-closes as \"resolved\".",
+          "statModifiers": { "reputation": 0, "chaos": 5, "stealth": 0 },
+          "sfx": "typing"
+        }
+      ]
+    },
+    {
+      "id": "random_003",
+      "version": 2,
+      "category": "random",
+      "character": "gary_intern",
+      "text": "Gary accidentally books the entire company for a meeting titled \"TEST\".",
+      "choices": [
+        {
+          "id": "random_003_a",
+          "text": "Cancel it immediately",
+          "consequence": "Half the company thanks you. Gary learns about calendars.",
+          "statModifiers": { "reputation": 5, "chaos": 0, "stealth": 5 },
+          "sfx": "cash_register"
+        },
+        {
+          "id": "random_003_b",
+          "text": "Rename it to \"All-Hands\" as a prank",
+          "consequence": "Chad tries to present. Chaos spikes.",
+          "statModifiers": { "reputation": -5, "chaos": 15, "stealth": -5 },
+          "sfx": "record_scratch"
+        },
+        {
+          "id": "random_003_c",
+          "text": "Let it ride",
+          "consequence": "Only the CEO shows up. Awkward silence.",
+          "statModifiers": { "reputation": -10, "chaos": 5, "stealth": 0 },
+          "sfx": "sad_trombone"
+        }
+      ]
+    },
+    {
+      "id": "random_005",
+      "version": 2,
+      "category": "random",
+      "character": "chad_disruptor",
+      "text": "Chad insists everyone install his \"productivity\" Chrome extension.",
+      "choices": [
+        {
+          "id": "random_005_a",
+          "text": "Install it and hope for the best",
+          "consequence": "It replaces every \"synergy\" with \"syner-JEE\".",
+          "statModifiers": { "reputation": 0, "chaos": 5, "stealth": 0 },
+          "sfx": "record_scratch"
+        },
+        {
+          "id": "random_005_b",
+          "text": "Politely decline",
+          "consequence": "Chad calls you \"non-adopter\" in standup.",
+          "statModifiers": { "reputation": -5, "chaos": 5, "stealth": 5 },
+          "sfx": "sad_trombone"
+        },
+        {
+          "id": "random_005_c",
+          "text": "Tell Dave to security-review it",
+          "consequence": "Dave blocks the extension company-wide.",
+          "statModifiers": { "reputation": 10, "chaos": 0, "stealth": 5 },
+          "sfx": "cash_register"
+        }
+      ]
+    }
+  ]
+}
+
