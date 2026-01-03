@@ -28,6 +28,17 @@
     },
     "plugins": [
       "expo-router"
-    ]
+    ],
+    "extra": {
+      "env": "development",
+      "enableAds": false,
+      "enableIAP": false,
+      "enableAnalytics": false,
+      "router": {},
+      "eas": {
+        "projectId": "e8b4dfe8-e135-49b8-9295-98ce863e9d47"
+      }
+    },
+    "owner": "0xdevsub"
   }
 }
