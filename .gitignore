@@ -32,6 +32,9 @@ yarn-error.*
 .env*.local
 .env
 
+# Google Service Account (sensitive credentials)
+google-service-account.json
+
 # Typescript
 *.tsbuildinfo
 
