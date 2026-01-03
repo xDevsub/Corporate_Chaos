@@ -1,4 +1,21 @@
-import * as InAppPurchases from 'expo-in-app-purchases';
+// Safely import IAP with mock fallback for Expo Go
+let InAppPurchases: any;
+
+try {
+  InAppPurchases = require('expo-in-app-purchases');
+} catch (e) {
+  console.warn('In-App Purchases not available (likely running in Expo Go). IAP will be mocked.');
+  
+  // Mock implementation
+  InAppPurchases = {
+    connectAsync: async () => Promise.resolve(),
+    disconnectAsync: async () => Promise.resolve(),
+    getProductsAsync: async () => Promise.resolve({ results: [] }),
+    purchaseItemAsync: async () => Promise.resolve(),
+    getPurchaseHistoryAsync: async () => Promise.resolve({ results: [] }),
+  };
+}
+
 import type { ProductId } from '../types/game.types';
 
 const PRODUCT_IDS: ProductId[] = ['coffee_badge', 'executive_pack', 'chaos_lord'];
@@ -11,10 +28,13 @@ async function ensureInitialized() {
     await InAppPurchases.connectAsync();
     initialized = true;
   } catch (error) {
+    // In Expo Go or web, this might fail or be mocked
     if (__DEV__) {
-      console.warn('[IAP] Failed to initialize', error);
+      console.warn('[IAP] Failed to initialize (mocking or unavailable)', error);
     }
-    throw error;
+    // Don't throw if we want to degrade gracefully
+    // throw error; 
+    initialized = true; // Pretend we initialized
   }
 }
 
@@ -22,7 +42,7 @@ export async function initializeIAP() {
   await ensureInitialized();
   try {
     const { results } = await InAppPurchases.getProductsAsync(PRODUCT_IDS);
-    return results;
+    return results || [];
   } catch (error) {
     if (__DEV__) {
       console.warn('[IAP] getProducts failed', error);
@@ -50,8 +70,8 @@ export async function restorePurchases(): Promise<ProductId[]> {
     const history = await InAppPurchases.getPurchaseHistoryAsync();
     const ids =
       history?.results
-        ?.map((p) => p.productId as ProductId)
-        ?.filter((id): id is ProductId => PRODUCT_IDS.includes(id as ProductId)) ?? [];
+        ?.map((p: any) => p.productId as ProductId)
+        ?.filter((id: string): id is ProductId => PRODUCT_IDS.includes(id as ProductId)) ?? [];
     return Array.from(new Set(ids));
   } catch (error) {
     if (__DEV__) {
@@ -71,4 +91,3 @@ export async function disconnectIAP() {
     }
   }
 }
-

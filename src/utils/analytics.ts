@@ -5,11 +5,17 @@ type AnalyticsInstance = {
   setUserProperty: (name: string, value: string) => Promise<void>;
 };
 
+// NOTE: Firebase Analytics does not work in Expo Go. 
+// We are disabling the native module import to prevent bundling errors.
+// To enable for production builds, uncomment the require below.
+
 async function getAnalytics(): Promise<AnalyticsInstance | null> {
   try {
+    // In Expo Go, we return null immediately to avoid bundling issues with native modules
     // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const mod: any = require('@react-native-firebase/analytics');
-    return mod?.default?.();
+    // const mod: any = require('@react-native-firebase/analytics');
+    // return mod?.default?.();
+    return null;
   } catch (error) {
     // In dev or if the module is unavailable, fall back to no-op.
     if (__DEV__) {
@@ -26,7 +32,7 @@ export async function trackEvent<E extends AnalyticsEvent>(
   const analytics = await getAnalytics();
   if (!analytics) {
     if (__DEV__) {
-      console.debug('[analytics] event', name, params);
+      console.debug('[analytics] event (mock)', name, params);
     }
     return;
   }
@@ -43,7 +49,7 @@ export async function setUserProperty(name: keyof UserProperties, value: string)
   const analytics = await getAnalytics();
   if (!analytics) {
     if (__DEV__) {
-      console.debug('[analytics] setUserProperty noop', name, value);
+      console.debug('[analytics] setUserProperty (mock)', name, value);
     }
     return;
   }
@@ -87,4 +93,3 @@ export const analyticsEvents = {
 } as const;
 
 export type AnalyticsEventName = keyof typeof analyticsEvents;
-

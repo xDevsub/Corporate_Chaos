@@ -7,6 +7,9 @@
 
 import * as Notifications from 'expo-notifications';
 import { Platform } from 'react-native';
+import Constants from 'expo-constants';
+
+const isExpoGo = Constants.appOwnership === 'expo';
 
 // Configure notification handler
 Notifications.setNotificationHandler({
@@ -23,34 +26,39 @@ Notifications.setNotificationHandler({
 export async function setupDailyNotifications() {
   if (Platform.OS === 'web') return;
 
-  const { status: existingStatus } = await Notifications.getPermissionsAsync();
-  let finalStatus = existingStatus;
+  // In Expo Go, we might see warnings or failures for certain notification types
+  // But local notifications generally should work. We'll wrap in try/catch just in case.
+  try {
+      const { status: existingStatus } = await Notifications.getPermissionsAsync();
+      let finalStatus = existingStatus;
 
-  if (existingStatus !== 'granted') {
-    const { status } = await Notifications.requestPermissionsAsync();
-    finalStatus = status;
+      if (existingStatus !== 'granted') {
+        const { status } = await Notifications.requestPermissionsAsync();
+        finalStatus = status;
+      }
+
+      if (finalStatus !== 'granted') {
+        return;
+      }
+
+      // Cancel existing to avoid duplicates
+      await Notifications.cancelAllScheduledNotificationsAsync();
+
+      // Schedule for 9:00 AM daily
+      await Notifications.scheduleNotificationAsync({
+        content: {
+          title: "☕ Daily Standup",
+          body: "Time for your Daily Standup! 3 quick scenarios waiting...",
+          data: { screen: 'daily-standup' },
+        },
+        trigger: {
+          hour: 9,
+          minute: 0,
+          repeats: true,
+          type: Notifications.SchedulableTriggerInputTypes.DAILY,
+        },
+      });
+  } catch (e) {
+      console.warn("Notification setup failed (may be due to Expo Go limitations)", e);
   }
-
-  if (finalStatus !== 'granted') {
-    return;
-  }
-
-  // Cancel existing to avoid duplicates
-  await Notifications.cancelAllScheduledNotificationsAsync();
-
-  // Schedule for 9:00 AM daily
-  await Notifications.scheduleNotificationAsync({
-    content: {
-      title: "☕ Daily Standup",
-      body: "Time for your Daily Standup! 3 quick scenarios waiting...",
-      data: { screen: 'daily-standup' },
-    },
-    trigger: {
-      hour: 9,
-      minute: 0,
-      repeats: true,
-      type: Notifications.SchedulableTriggerInputTypes.DAILY,
-    },
-  });
 }
-
